@@ -2,14 +2,12 @@
 
 ## install
 
-`npm install`
-`npm run build`
-
+    npm install
+    npm run build
 
 at second shell/prompt, watch files for changes to rebuild:
 
-`npm run watch`
-
+    npm run watch
 
 ## in Firefox:
 
