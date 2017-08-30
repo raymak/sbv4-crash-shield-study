@@ -1,7 +1,7 @@
 {
   "name": "SBv4-crash-study",
   "version": "1.0.0",
-  "description": "Safe Browsing v4 crash rate Shield study",
+  "description": "Study comparing the crash rates of versions 2 and 4 of Safe Browsing in preparation for the roll-out to all users in 56",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,7 +33,7 @@
     "multiprocessCompatible": true,
     "hasEmbeddedWebExtension": false,
     "creator": "Kamyar Ardekani <kardekani@mozilla.com>",
-    "description": "Safe Browsing v4 crash rate Shield study",
+    "description": "Study comparing the crash rates of versions 2 and 4 of Safe Browsing in preparation for the roll-out to all users in 56",
     "chrome": "sbv4-crash-study"
   },
   "dependencies": {}
