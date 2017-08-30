@@ -1,0 +1,40 @@
+{
+  "name": "SBv4-crash-study",
+  "version": "1.0.0",
+  "description": "Safe Browsing v4 crash rate Shield study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "cp node_modules/shield-studies-addon-utils/dist/StudyUtils.jsm addon/",
+    "build": "XPI=SBv4-crash-rate-test.xpi bash ./bin/xpi.sh",
+    "eslint": "eslint addon --ext jsm --ext js --ext json --",
+    "watch": "onchange 'addon/**' 'package.json' 'template/**' -e addon/install.rdf -e addon/chrome.manifest -e addon/StudyUtils.jsm -- npm run build -- '{{event}} {{changed}} $(date)'"
+  },
+  "keywords": [],
+  "author": "Kamyar Ardekani <kardekani@mozilla.com>",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "ajv": "^5.1.1",
+    "datauri": "^1.0.5",
+    "eslint": "^3.19.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mozilla": "^0.3.2",
+    "jshint": "^2.9.5",
+    "moustache": "0.0.2",
+    "onchange": "^3.2.1",
+    "shield-studies-addon-utils": "^4.0.0"
+  },
+  "addon": {
+    "version": "1.0.0",
+    "id": "SBv4-crash-study@mozilla.com",
+    "name": "SBv4 crash study",
+    "minVersion": "55.0",
+    "maxVersion": "*",
+    "multiprocessCompatible": true,
+    "hasEmbeddedWebExtension": false,
+    "creator": "Kamyar Ardekani <kardekani@mozilla.com>",
+    "description": "Safe Browsing v4 crash rate Shield study",
+    "chrome": "sbv4-crash-study"
+  },
+  "dependencies": {}
+}
