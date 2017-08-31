@@ -12,6 +12,7 @@ Cu.import("resource://gre/modules/Console.jsm");
 const log = createLog(studyConfig.studyName, config.log.bootstrap.level);  // defined below.
 
 Cu.import("resource://gre/modules/Services.jsm");
+const UserPreferences = Services.prefs;
 const DefaultPreferences = Services.prefs.getDefaultBranch("");
 
 const STUDYUTILSPATH = `${__SCRIPT_URI_SPEC__}/../${studyConfig.studyUtilsPath}`;
@@ -60,6 +61,9 @@ function setPrefsToSBv2() {
   DefaultPreferences.setStringPref("urlclassifier.phishTable", "goog-phish-shavar,test-phish-simple");
   DefaultPreferences.setStringPref("urlclassifier.downloadAllowTable", "goog-downloadwhite-digest256");
   DefaultPreferences.setStringPref("urlclassifier.downloadBlockTable", "goog-badbinurl-shavar");
+
+  // forcing reinitialization re: https://github.com/raymak/sbv4-crash-shield-study/issues/4
+  UserPreferences.setStringPref("browser.safebrowsing.provider.google.advisoryName", "Google Safe Browsing");
 }
 
 function shutdown(addonData, reason) {
