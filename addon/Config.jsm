@@ -14,7 +14,7 @@ var EXPORTED_SYMBOLS = ["config"];
 
 var config = {
   "study": {
-    "studyName": "mostImportantExperiment", // no spaces, for all the reasons
+    "studyName": "SBv4-crash-study", // no spaces, for all the reasons
     "weightedVariations": [
       {"name": "control",
         "weight": 1},
