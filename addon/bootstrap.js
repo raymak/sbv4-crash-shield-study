@@ -66,8 +66,14 @@ function setPrefsToSBv2() {
   UserPreferences.setStringPref("browser.safebrowsing.provider.google.advisoryName", "Google Safe Browsing");
 }
 
-function shutdown(addonData, reason) {
+function resetInitPref() {
+  UserPreferences.clearUserPref("browser.safebrowsing.provider.google.advisoryName");
+}
+
+function shutdown(addonData, reason) { 
   console.log("shutdown", REASONS[reason] || reason);
+
+  resetInitPref();
   // are we uninstalling?
   // if so, user or automatic?
   if (reason === REASONS.ADDON_UNINSTALL || reason === REASONS.ADDON_DISABLE) {
